@@ -11,6 +11,20 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+# Function
+find ${HOME}/bin/functions/ -type f| while read line; do source "${line}"; done
+
+# EDITOR
 export EDITOR='vim' # nanoからvimに変更
 export VISUAL='vim' # nanoからvimに変更
 export PAGER='less'
+
+# History
+HISTFILE=$HOME/.zsh-history
+HISTSIZE=100000
+SAVEHIST=1000000
+
+# share .zshhistory
+setopt inc_append_history
+setopt share_history
+
