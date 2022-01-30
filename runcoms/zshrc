@@ -11,8 +11,14 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+# PATH
+export PATH="$PATH"":${HOME}/.local/bin/"
+
+# keymap
+bindkey -v
+
 # Function
-find ${HOME}/bin/functions/ -type f| while read line; do source "${line}"; done
+find "${HOME}"/bin/functions/ -type f | while read line; do source "${line}"; done
 
 # EDITOR
 export EDITOR='vim' # nanoからvimに変更
@@ -31,8 +37,8 @@ setopt share_history
 # ssh-agent
 SSH_KEY_LIFE_TIME_SEC=3600
 SSH_AGENT_FILE="$HOME/.ssh-agent"
-test -f $SSH_AGENT_FILE && source $SSH_AGENT_FILE > /dev/null 2>&1
-if [ $( ps -ef | grep ssh-agent | grep -v grep | wc -l ) -eq 0 ]; then
-    ssh-agent -t $SSH_KEY_LIFE_TIME_SEC > $SSH_AGENT_FILE
-    source $SSH_AGENT_FILE > /dev/null 2>&1
+test -f "$SSH_AGENT_FILE" && source "$SSH_AGENT_FILE" >/dev/null 2>&1
+if [ $(ps -ef | grep ssh-agent | grep -v grep | wc -l) -eq 0 ]; then
+  ssh-agent -t $SSH_KEY_LIFE_TIME_SEC >|"$SSH_AGENT_FILE"
+  source "$SSH_AGENT_FILE" >/dev/null 2>&1
 fi
