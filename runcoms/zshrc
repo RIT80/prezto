@@ -14,11 +14,11 @@ fi
 # PATH
 export PATH="$PATH"":${HOME}/.local/bin/"
 
-# keymap
-bindkey -v
-
 # Function
 find "${HOME}"/bin/functions/ -type f | while read line; do source "${line}"; done
+
+# bind
+bindkey "jj" vi-cmd-mode
 
 # EDITOR
 export EDITOR='vim' # nanoからvimに変更

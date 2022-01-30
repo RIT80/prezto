@@ -61,7 +61,14 @@ zstyle ':prezto:load' pmodule \
 #
 
 # Set the key mapping style to 'emacs' or 'vi'.
-zstyle ':prezto:module:editor' key-bindings 'emacs'
+zstyle ':prezto:module:editor' key-bindings 'vi'
+zstyle ':prezto:module:editor:info:keymap:primary' format '[INS]'
+zstyle ':prezto:module:editor:info:keymap:alternate' format '[NOR]'
+zstyle ':prezto:module:editor:info:keymap:primary:insert' format 'I'
+zstyle ':prezto:module:editor:info:keymap:primary:overwrite' format 'O'
+zstyle ':prezto:module:editor:info:completing' format '...'
+
+
 
 # Auto convert .... to ../..
 # zstyle ':prezto:module:editor' dot-expansion 'yes'
@@ -117,7 +124,7 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-zstyle ':prezto:module:prompt' theme 'sorin'
+zstyle ':prezto:module:prompt' theme 'steeef'
 
 # Set the working directory prompt display length.
 # By default, it is set to 'short'. Set it to 'long' (without '~' expansion)
