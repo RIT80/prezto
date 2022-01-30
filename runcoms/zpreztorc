@@ -68,8 +68,6 @@ zstyle ':prezto:module:editor:info:keymap:primary:insert' format 'I'
 zstyle ':prezto:module:editor:info:keymap:primary:overwrite' format 'O'
 zstyle ':prezto:module:editor:info:completing' format '...'
 
-
-
 # Auto convert .... to ../..
 # zstyle ':prezto:module:editor' dot-expansion 'yes'
 
