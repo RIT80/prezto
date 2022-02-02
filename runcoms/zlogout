@@ -17,3 +17,7 @@ SAYINGS=(
 echo $SAYINGS[$(($RANDOM % ${#SAYINGS} + 1))]
 
 } >&2
+
+# ssh-agent
+ssh-add -D
+ssh-agent -k
